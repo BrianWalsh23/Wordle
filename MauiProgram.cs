@@ -1,5 +1,4 @@
-﻿
-using Mopups.Hosting;
+﻿using Mopups.Hosting;
 using Wordle.ViewModel;
 
 namespace Wordle;
