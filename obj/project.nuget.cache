@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "HUPXqLZUihbj2nwRd6Kmn1VtW4yDxZIlnYXov7qr++sBwf7hoERm6Z5yVs38m1vlpLA8B0sVuUkhIiJ54cKHLA==",
+  "dgSpecHash": "2kQGyDL4lQo4pYaNzW1herglMrnE98n86DLGC3toeQJw1ZANB8iw6UUbT5mnT7Ri1WOR3GWGgVW0KV4dTJn5Rg==",
   "success": true,
   "projectFilePath": "C:\\Users\\brian\\OneDrive - Atlantic TU\\Year 2\\Wordle\\Wordle\\Wordle.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\brian\\.nuget\\packages\\communitytoolkit.mvvm\\8.2.2\\communitytoolkit.mvvm.8.2.2.nupkg.sha512",
     "C:\\Users\\brian\\.nuget\\packages\\googlegson\\2.9.1.1\\googlegson.2.9.1.1.nupkg.sha512",
     "C:\\Users\\brian\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\brian\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
