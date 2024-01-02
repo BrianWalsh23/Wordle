@@ -1,24 +1,23 @@
-﻿namespace Wordle
+﻿using Mopups.Services;
+using Wordle.ViewModel;
+
+namespace Wordle
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
 
-        public MainPage()
+
+        public MainPage(GameViewModel viewModel)
         {
+
             InitializeComponent();
+            BindingContext = viewModel;
+            var frame = new Frame();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void StartHere_Clicked(object sender, EventArgs e)
         {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            MopupService.Instance.PushAsync(new PopUpPage());
         }
     }
 }
