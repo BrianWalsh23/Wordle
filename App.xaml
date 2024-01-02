@@ -5,10 +5,39 @@
              x:Class="Wordle.App">
     <Application.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
-                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
-            </ResourceDictionary.MergedDictionaries>
+
+            <!--Colours used for grids-->
+            <Color x:Key="PrimaryColor">white</Color>
+            <Color x:Key="SecondaryColor">black</Color>
+
+            <!--Text colour with font-->
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource PrimaryColor}"/>
+                <Setter Property="FontFamily" Value="OpenSansRegular"/>
+
+            </Style>
+
+            <!--Setup for wordle grid-->
+            <Style x:Key="LetterFrame" TargetType="Frame">
+                <Setter Property="BorderColor" Value="LightGray"/>
+                <Setter Property="Padding" Value="14, 14"/>
+                <Setter Property="WidthRequest" Value="65"/>
+                <Setter Property="HeightRequest" Value="80"/>
+            </Style>
+
+            <!--Setup for Keyboard Grid-->
+            <Style x:Key="LetterButton" TargetType="Button">
+                <Setter Property="TextColor" Value="{DynamicResource PrimaryColor}"/>
+                <Setter Property="BackgroundColor" Value="{DynamicResource SecondaryColor}"/>
+                <Setter Property="FontFamily" Value="OpenSansRegular"/>
+                <Setter Property="BorderColor" Value="LightGray"/>
+                <Setter Property="BorderWidth" Value="2"/>
+                <Setter Property="CornerRadius" Value="5"/>
+                <Setter Property="WidthRequest" Value="35"/>
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="Padding" Value="4"/>
+            </Style>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>
