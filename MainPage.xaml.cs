@@ -1,18 +1,28 @@
-﻿using Mopups.Services;
+﻿using System.Collections.Generic;
 using Wordle.ViewModel;
+
 
 namespace Wordle
 {
     public partial class MainPage : ContentPage
     {
-
-
+        private Settings set;
         public MainPage(GameViewModel viewModel)
         {
 
-            InitializeComponent();
+            InitializeComponent();;
             BindingContext = viewModel;
             var frame = new Frame();
         }
+
+        private async void Settings_Clicked(object sender, EventArgs e)
+        {
+
+            await Navigation.PushAsync(new SettingsPage(set));
+        }
+
+        
+
+
     }
 }

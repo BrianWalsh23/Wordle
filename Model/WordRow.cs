@@ -21,6 +21,12 @@ public class WordRow
     //Are letters valid Green yes. Yellow is yes but in wrong position.
     public bool Validate(char[] correctAnswer)
     {
+        if (correctAnswer.Length != Letters.Length)
+        {
+            // Handle scenario where arrays have different lengths
+            throw new ArgumentException("Array lengths do not match");
+        }
+
         int count = 0;
 
         for (int i = 0; i < Letters.Length; i++)
@@ -40,7 +46,7 @@ public class WordRow
                 letter.Color = Colors.Gray;
             }
         }
-        return count == 5;
+        return count == Letters.Length;
     }
 }
 
@@ -48,6 +54,7 @@ public partial class Letter : ObservableObject
 {
     public Letter()
     {
+        
         Color = Colors.Black;
     }
 

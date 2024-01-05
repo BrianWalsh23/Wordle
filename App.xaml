@@ -8,7 +8,8 @@
 
             <!--Colours used for grids-->
             <Color x:Key="PrimaryColor">white</Color>
-            <Color x:Key="SecondaryColor">black</Color>
+            <Color x:Key="SecondaryColor">lightgray</Color>
+            <Color x:Key="ThirdColor">black</Color>
 
             <!--Text colour with font-->
             <Style TargetType="Label">
@@ -19,7 +20,7 @@
 
             <!--Setup for wordle grid-->
             <Style x:Key="LetterFrame" TargetType="Frame">
-                <Setter Property="BorderColor" Value="LightGray"/>
+               <!-- <Setter Property="BorderColor" Value="Black"/> -->
                 <Setter Property="Padding" Value="14, 14"/>
                 <Setter Property="WidthRequest" Value="65"/>
                 <Setter Property="HeightRequest" Value="80"/>
@@ -27,8 +28,8 @@
 
             <!--Setup for Keyboard Grid-->
             <Style x:Key="LetterButton" TargetType="Button">
-                <Setter Property="TextColor" Value="{DynamicResource PrimaryColor}"/>
-                <Setter Property="BackgroundColor" Value="{DynamicResource SecondaryColor}"/>
+                <!--<Setter Property="TextColor" Value="{DynamicResource PrimaryColor}"/>
+                <Setter Property="BackgroundColor" Value="{DynamicResource ThirdColor}"/> -->
                 <Setter Property="FontFamily" Value="OpenSansRegular"/>
                 <Setter Property="BorderColor" Value="LightGray"/>
                 <Setter Property="BorderWidth" Value="2"/>

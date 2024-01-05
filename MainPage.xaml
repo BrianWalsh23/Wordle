@@ -7,9 +7,13 @@
              xmlns:model="clr-namespace:Wordle.Model"
              x:DataType="viewmodel:GameViewModel"
              >
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="{AppThemeBinding Light=settings.png, Dark=settingsdark.png}" Clicked="Settings_Clicked"/>
+    </ContentPage.ToolbarItems>
 
     <Grid RowDefinitions="*, Auto"
-          Padding="8, 18, 8, 12">
+          Padding="8, 1, 8, 5">
 
 
         <!--Game Field-->
@@ -85,6 +89,7 @@
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </HorizontalStackLayout>
+
         </VerticalStackLayout>
     </Grid>
 

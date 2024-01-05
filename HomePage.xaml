@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Wordle.HomePage"
+             Title="HomePage">
+
+
+     <ScrollView HorizontalOptions="Center" VerticalOptions="Center">
+        <Grid RowDefinitions="*, Auto"
+                  Padding="8, 1, 8, 5">
+            <Border WidthRequest="300" HeightRequest="300"
+                BackgroundColor="White"
+                HorizontalOptions="Center">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="40,0,0,40"/>
+                </Border.StrokeShape>
+                <VerticalStackLayout Spacing="3">
+                    <Entry
+                    x:Name="UsernameEntry"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Placeholder="Username" />
+
+                    <Button
+                    x:Name="LoginButton"
+                    Margin="10,5"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="EndAndExpand"
+                    Text="Login"
+                    Clicked="LoginButton_Clicked">
+                    </Button>
+
+                </VerticalStackLayout>
+            </Border>
+        </Grid>
+    </ScrollView>
+    
+</ContentPage>
