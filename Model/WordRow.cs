@@ -1,10 +1,11 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using System;
+using System.Diagnostics;
 
 namespace Wordle.Model;
 
-public class WordRow
-{
+public class WordRow : ObservableObject
+{ 
     public WordRow()
     {
         Letters = new Letter[5]
@@ -16,53 +17,72 @@ public class WordRow
             new Letter(),
         };
     }
-    public Letter[] Letters { get; set; }
+    private Letter[] letters;
+
+    public Letter[] Letters
+    {
+        get { return letters; }
+        set { SetProperty(ref letters, value); }
+    }
+
 
     //Are letters valid Green yes. Yellow is yes but in wrong position.
-    public bool Validate(char[] correctAnswer)
+    public bool Validate(char[] Word)
     {
-        if (correctAnswer.Length != Letters.Length)
-        {
-            // Handle scenario where arrays have different lengths
-            throw new ArgumentException("Array lengths do not match");
-        }
-
         int count = 0;
-
         for (int i = 0; i < Letters.Length; i++)
         {
             var letter = Letters[i];
-            if (letter.Input == correctAnswer[i])
+            char inputUpperCase = char.ToUpperInvariant(letter.Input); // Convert input to upper case
+            char expectedUpperCase = char.ToUpperInvariant(Word[i]);
+
+            Debug.WriteLine($"Input: {letter.Input}, Expected: {Word[i]}");
+
+            if (inputUpperCase == expectedUpperCase)
             {
                 letter.Color = Colors.Green;
+                letter.IsCorrect = true;
                 count++;
             }
-            else if (correctAnswer.Contains(letter.Input))
+            else if (Word.Contains(letter.Input) || Word.Contains(char.ToLowerInvariant(letter.Input)))
             {
                 letter.Color = Colors.Yellow;
+                letter.IsCorrect = false;
             }
             else
             {
                 letter.Color = Colors.Gray;
+                letter.IsCorrect = false;
             }
         }
-        return count == Letters.Length;
+
+        return count == 5;
     }
 }
 
 public partial class Letter : ObservableObject
 {
-    public Letter()
+    private bool isCorrect;
+
+    public bool IsCorrect
     {
-        
-        Color = Colors.Black;
+        get { return isCorrect; }
+        set { SetProperty(ref isCorrect, value); }
     }
 
-    [ObservableProperty]
     private char input;
 
-    [ObservableProperty]
+    public char Input
+    {
+        get { return input; }
+        set { SetProperty(ref input, value); }
+    }
+
     private Color color;
 
-
+    public Color Color
+    {
+        get { return color; }
+        set { SetProperty(ref color, value); }
+    }
 }

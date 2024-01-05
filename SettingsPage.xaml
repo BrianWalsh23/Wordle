@@ -3,13 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Wordle.SettingsPage"
              Title="SettingsPage">
-    <VerticalStackLayout BackgroundColor="{DynamicResource PrimaryColor}">
-        <Button Text="light" Clicked="LightMode_Clicked"  HorizontalOptions="Center" VerticalOptions="Center" Margin="10"/>
-        <Button Text="Dark" Clicked="Dark_Clicked"  HorizontalOptions="Center" VerticalOptions="Center" Margin="10"/>
+    <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Button Text="Save" Clicked="SaveSettingsBtn_Clicked"  HorizontalOptions="Center" VerticalOptions="Center"/>
+    Text="Settings"
+    VerticalOptions="Center" 
+    HorizontalOptions="Center"
+    FontSize="Title" />
+
+        <Button Text = "LightMode"
+                Margin="10,5"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Clicked="LightMode_Clicked"
+                />
+
+
+        <Button Text = "DarkMode"
+                Margin="10,5"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Clicked="DarkMode_Clicked"/>
+
+
+
+
+
     </VerticalStackLayout>
 </ContentPage>

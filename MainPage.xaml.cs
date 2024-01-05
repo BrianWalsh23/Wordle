@@ -1,12 +1,10 @@
-﻿using System.Collections.Generic;
-using Wordle.ViewModel;
+﻿using Wordle.ViewModel;
 
 
 namespace Wordle
 {
     public partial class MainPage : ContentPage
     {
-        private Settings set;
         public MainPage(GameViewModel viewModel)
         {
 
@@ -18,7 +16,7 @@ namespace Wordle
         private async void Settings_Clicked(object sender, EventArgs e)
         {
 
-            await Navigation.PushAsync(new SettingsPage(set));
+            await Navigation.PushAsync(new SettingsPage());
         }
 
         

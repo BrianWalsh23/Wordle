@@ -2,30 +2,30 @@ namespace Wordle;
 
 public partial class SettingsPage : ContentPage
 {
-    Settings set;
-    public SettingsPage(Settings s)
-    {
-        set = s;
-        InitializeComponent();
-        BindingContext = set;
-    }
 
-    private async void SaveSettingsBtn_Clicked(object sender, EventArgs e)
+    public SettingsPage()
     {
-        await Navigation.PopAsync();
+
+        InitializeComponent();
     }
 
     private void LightMode_Clicked(object sender, EventArgs e)
     {
-        set.lightmode();
+
+        // Change the color resources to light mode colors
+        Application.Current.Resources["PrimaryColor"] = Color.FromRgb(255, 255, 255);
+        Application.Current.Resources["SecondaryColor"] = Color.FromRgb(100, 100, 100);
+        Application.Current.Resources["ThirdColor"] = Color.FromRgb(0, 0, 0);
+
+
+
     }
 
-    private void Dark_Clicked(object sender, EventArgs e)
+    private void DarkMode_Clicked(object sender, EventArgs e)
     {
-        set.darkmode();
+        BackgroundColor = Color.FromRgb(25, 25, 25);
+        Application.Current.Resources["PrimaryColor"] = Color.FromRgb(25, 25, 25);
+
+
     }
-
-
-
-
 }

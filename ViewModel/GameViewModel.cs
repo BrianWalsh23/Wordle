@@ -1,66 +1,14 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Microsoft.Maui;
+using System.Collections.Generic;
 using Wordle.Model;
 
 namespace Wordle.ViewModel
 {
     public partial class GameViewModel : ObservableObject
     {
-        List<string> words = new List<string>();
-        HttpClient httpClient;
-        string savedfilelocation = System.IO.Path.Combine(FileSystem.Current.AppDataDirectory, "RandomWords.txt");
-
-
-        public async Task getWordList()
-        {
-            if (File.Exists(savedfilelocation))
-            {
-                ReadFileIntoList();
-            }
-            else
-            {
-                await DownloadFile();
-                ReadFileIntoList();
-            }
-        }
-
-        public void ReadFileIntoList()
-        {
-            StreamReader sr = new StreamReader(savedfilelocation);
-            string word = "";
-            while ((word = sr.ReadLine()) != null)
-            {
-                words.Add(word);
-            }
-            sr.Close();
-        }
-        public async Task DownloadFile()
-        {
-
-            using (var httpClient = new HttpClient())
-            {
-                var responseStream = await httpClient.GetStreamAsync("https://raw.githubusercontent.com/DonH-ITS/jsonfiles/main/words.txt");
-                using var fileStream = new FileStream(savedfilelocation, FileMode.Create);
-                responseStream.CopyToAsync(fileStream);
-            }
-        }
-
-
-        public String GenerateRandomWord()
-        {
-            if (words.Count > 0)
-            {
-                Random random = new Random();
-                int which = random.Next(words.Count);
-                return words[which];
-            }
-
-            else
-            {
-                throw new InvalidOperationException("Words list is empty or not initialized.");
-
-            }
-        }
+        ListWords list;
 
         // rowIndex 0-5
         int rowIndex;
@@ -80,37 +28,50 @@ namespace Wordle.ViewModel
 
         public GameViewModel()
         {
-            string randomWord = GenerateRandomWord();
-            correctAnswer = randomWord.ToCharArray();
-
-            Rows = new WordRow[6]
-            {
+            list = new ListWords();
+            rows = new WordRow[6]
+                {
                 new WordRow(),
                 new WordRow(),
                 new WordRow(),
                 new WordRow(),
                 new WordRow(),
                 new WordRow()
-            };
+                };
 
-            //char[] correctAnswer = new char[] { 'c', 'o', 'd', 'e', 's' };
-            correctAnswer = randomWord.ToCharArray();
+
             KeyboardRow1 = "QWERTYUIOP".ToCharArray();
             KeyboardRow2 = "ASDFGHJKL".ToCharArray();
             KeyboardRow3 = "<ZXCVBNM>".ToCharArray();
 
 
+            InitializeAsync();
+
 
         }
 
-        [RelayCommand]
-        
+        private async void InitializeAsync()
+        {
+            await list.getWordList();
+            GenerateWord();
+            await App.Current.MainPage.DisplayAlert("Generated Word", $"The generated word is: {new string(Word)}", "OK");
+        }
+
+        public bool newWord = true;
+        public char[] Word;
+
+        public async void GenerateWord()
+        {
+            Word = list.GenerateRandomWord().ToCharArray();
+
+        }
+
         public void Enter()
         {
             if (columnIndex != 5)
                 return;
 
-            var correct = Rows[rowIndex].Validate(correctAnswer);
+            var correct = Rows[rowIndex].Validate(Word);
 
             if (correct)
             {
