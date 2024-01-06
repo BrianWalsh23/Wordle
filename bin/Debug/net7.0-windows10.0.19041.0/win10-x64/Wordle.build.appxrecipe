@@ -895,6 +895,21 @@
     <AppxPackagedFile Include="C:\Users\brian\OneDrive - Atlantic TU\Year 2\Wordle\Wordle\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\brian\OneDrive - Atlantic TU\Year 2\Wordle\Wordle\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\help_icon.scale-100.png">
+      <PackagePath>help_icon.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\brian\OneDrive - Atlantic TU\Year 2\Wordle\Wordle\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\help_icon.scale-125.png">
+      <PackagePath>help_icon.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\brian\OneDrive - Atlantic TU\Year 2\Wordle\Wordle\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\help_icon.scale-150.png">
+      <PackagePath>help_icon.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\brian\OneDrive - Atlantic TU\Year 2\Wordle\Wordle\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\help_icon.scale-200.png">
+      <PackagePath>help_icon.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\brian\OneDrive - Atlantic TU\Year 2\Wordle\Wordle\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\help_icon.scale-400.png">
+      <PackagePath>help_icon.scale-400.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brian\OneDrive - Atlantic TU\Year 2\Wordle\Wordle\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\letterW.scale-100.png">
       <PackagePath>letterW.scale-100.png</PackagePath>
     </AppxPackagedFile>

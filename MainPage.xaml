@@ -10,73 +10,73 @@
              >
     
     <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="help_icon.png" Clicked="ToolbarItem_Clicked"/>
         <ToolbarItem IconImageSource="{AppThemeBinding Light=settings.png, Dark=settingsdark.png}" Clicked="Settings_Clicked"/>
     </ContentPage.ToolbarItems>
 
     <Grid RowDefinitions="*, Auto"
-          Padding="8, 1, 8, 5">
+          Padding="8, -45, 8, 50">
 
         <!--Game Field-->
-            <VerticalStackLayout 
+        <VerticalStackLayout 
                 Spacing="4"
                 BindableLayout.ItemsSource ="{Binding Rows}">
-                <BindableLayout.ItemTemplate>
-                    <DataTemplate x:DataType="model:WordRow">
-                        <HorizontalStackLayout Spacing="4"
+            <BindableLayout.ItemTemplate>
+                <DataTemplate x:DataType="model:WordRow">
+                    <HorizontalStackLayout Spacing="4"
                         HorizontalOptions="Center"
                         BindableLayout.ItemsSource="{Binding Letters}">
-                            <BindableLayout.ItemTemplate>
-                                <DataTemplate x:DataType="model:Letter">
-                                    <Frame Style="{DynamicResource LetterFrame}"
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate x:DataType="model:Letter">
+                                <Frame Style="{DynamicResource LetterFrame}"
                                         BackgroundColor="{Binding Color}"
                                         >
-                                        <Label Text="{Binding Input}"
+                                    <Label Text="{Binding Input}"
                                            FontSize="36"
                                            HorizontalOptions="Center"
                                            VerticalOptions="Center"/>
-                                    </Frame>
-                                </DataTemplate>
-                            </BindableLayout.ItemTemplate>
-                        </HorizontalStackLayout>
-                    </DataTemplate>
-                </BindableLayout.ItemTemplate>
+                                </Frame>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </VerticalStackLayout>
 
-            </VerticalStackLayout>
+        <!--Keyboard Layout-->
 
-            <!--Keyboard Layout-->
-
-            <!--Keyboard location on grid-->
-            <VerticalStackLayout Grid.Row="1" Spacing="4">
-                <!-- Setup for first keyboard row-->
-                <HorizontalStackLayout 
+        <!--Keyboard location on grid-->
+        <VerticalStackLayout Grid.Row="1" Spacing="4">
+            <!-- Setup for first keyboard row-->
+            <HorizontalStackLayout 
                 Spacing="2"
                 HorizontalOptions="Center"
                         BindableLayout.ItemsSource="{Binding KeyboardRow1}">
-                    <BindableLayout.ItemTemplate>
-                        <DataTemplate x:DataType="{x:Null}">
-                            <Button Style="{DynamicResource LetterButton}"
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="{x:Null}">
+                        <Button Style="{DynamicResource LetterButton}"
                                 Text="{Binding .}"
                                 Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:GameViewModel}}, Path=EnterLetterCommand}"
                                 CommandParameter="{Binding .}"/>
-                        </DataTemplate>
-                    </BindableLayout.ItemTemplate>
-                </HorizontalStackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </HorizontalStackLayout>
 
-                <!-- Setup for second keyboard row-->
-                <HorizontalStackLayout Spacing="2"
+            <!-- Setup for second keyboard row-->
+            <HorizontalStackLayout Spacing="2"
                 HorizontalOptions="Center"
                         BindableLayout.ItemsSource="{Binding KeyboardRow2}">
-                    <BindableLayout.ItemTemplate>
-                        <DataTemplate x:DataType="{x:Null}">
-                            <Button Style="{DynamicResource LetterButton}"
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="{x:Null}">
+                        <Button Style="{DynamicResource LetterButton}"
                                 Text="{Binding .}"
                                 Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:GameViewModel}}, Path=EnterLetterCommand}"
                                 CommandParameter="{Binding .}"/>
-                        </DataTemplate>
-                    </BindableLayout.ItemTemplate>
-                </HorizontalStackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </HorizontalStackLayout>
 
-                <!-- Setup for third keyboard row-->
+            <!-- Setup for third keyboard row-->
             <HorizontalStackLayout Spacing="2"
                 HorizontalOptions="Center"
                         BindableLayout.ItemsSource="{Binding KeyboardRow3}">
@@ -90,8 +90,5 @@
                 </BindableLayout.ItemTemplate>
             </HorizontalStackLayout>
         </VerticalStackLayout>
-        </Grid>
-
-        
-
+    </Grid>
 </ContentPage>

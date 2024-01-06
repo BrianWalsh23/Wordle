@@ -49,6 +49,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\help_icon.svg" />
 	  <None Remove="Resources\Images\LetterW.png" />
 	  <None Remove="Resources\Images\settings.svg" />
 	  <None Remove="Resources\Images\settingsdark.svg" />
@@ -64,6 +65,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="HelpPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="HomePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

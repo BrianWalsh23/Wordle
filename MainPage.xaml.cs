@@ -15,6 +15,8 @@ namespace Wordle
             InitializeComponent();;
             BindingContext = viewModel;
             var frame = new Frame();
+            //string storedText = UserData.EnteredText;
+           // StoredTextLabel.Text = storedText;
 
         }
 
@@ -24,7 +26,10 @@ namespace Wordle
             await Navigation.PushAsync(new SettingsPage());
         }
 
-
+        private async void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new HelpPage());
+        }
     }
 
 }
