@@ -336,3 +336,12 @@ C:\Users\brian\OneDrive - Atlantic TU\Year 2\Wordle\Wordle\obj\Debug\net7.0-wind
 C:\Users\brian\OneDrive - Atlantic TU\Year 2\Wordle\Wordle\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\settingsdark.scale-200.png
 C:\Users\brian\OneDrive - Atlantic TU\Year 2\Wordle\Wordle\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\settingsdark.scale-400.png
 C:\Users\brian\OneDrive - Atlantic TU\Year 2\Wordle\Wordle\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\letterW.scale-100.png
+C:\Users\brian\OneDrive - Atlantic TU\Year 2\Wordle\Wordle\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\IdentityModel.dll
+C:\Users\brian\OneDrive - Atlantic TU\Year 2\Wordle\Wordle\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\IdentityServer4.Storage.dll
+C:\Users\brian\OneDrive - Atlantic TU\Year 2\Wordle\Wordle\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Newtonsoft.Json.dll
+C:\Users\brian\OneDrive - Atlantic TU\Year 2\Wordle\Wordle\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\wordle_background.scale-100.png
+C:\Users\brian\OneDrive - Atlantic TU\Year 2\Wordle\Wordle\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\wordle.scale-100.png
+C:\Users\brian\OneDrive - Atlantic TU\Year 2\Wordle\Wordle\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\wordle.scale-125.png
+C:\Users\brian\OneDrive - Atlantic TU\Year 2\Wordle\Wordle\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\wordle.scale-150.png
+C:\Users\brian\OneDrive - Atlantic TU\Year 2\Wordle\Wordle\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\wordle.scale-200.png
+C:\Users\brian\OneDrive - Atlantic TU\Year 2\Wordle\Wordle\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\wordle.scale-400.png

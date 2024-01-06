@@ -613,6 +613,12 @@
     <AppxPackagedFile Include="C:\Users\brian\.nuget\packages\communitytoolkit.mvvm\8.2.2\lib\net6.0\CommunityToolkit.Mvvm.dll">
       <PackagePath>CommunityToolkit.Mvvm.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\brian\.nuget\packages\identitymodel\4.4.0\lib\netstandard2.0\IdentityModel.dll">
+      <PackagePath>IdentityModel.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\brian\.nuget\packages\identityserver4.storage\4.1.2\lib\netstandard2.0\IdentityServer4.Storage.dll">
+      <PackagePath>IdentityServer4.Storage.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brian\.nuget\packages\microsoft.extensions.configuration\7.0.0\lib\net7.0\Microsoft.Extensions.Configuration.dll">
       <PackagePath>Microsoft.Extensions.Configuration.dll</PackagePath>
     </AppxPackagedFile>
@@ -693,6 +699,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brian\.nuget\packages\mopups\1.2.0\lib\net7.0-windows10.0.19041\Mopups.dll">
       <PackagePath>Mopups.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\brian\.nuget\packages\newtonsoft.json\11.0.2\lib\netstandard2.0\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brian\.nuget\packages\microsoft.graphics.win2d\1.0.5.1\runtimes\win10-x64\native\Microsoft.Graphics.Canvas.dll">
       <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>
@@ -918,6 +927,24 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brian\OneDrive - Atlantic TU\Year 2\Wordle\Wordle\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\settingsdark.scale-400.png">
       <PackagePath>settingsdark.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\brian\OneDrive - Atlantic TU\Year 2\Wordle\Wordle\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\wordle.scale-100.png">
+      <PackagePath>wordle.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\brian\OneDrive - Atlantic TU\Year 2\Wordle\Wordle\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\wordle.scale-125.png">
+      <PackagePath>wordle.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\brian\OneDrive - Atlantic TU\Year 2\Wordle\Wordle\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\wordle.scale-150.png">
+      <PackagePath>wordle.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\brian\OneDrive - Atlantic TU\Year 2\Wordle\Wordle\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\wordle.scale-200.png">
+      <PackagePath>wordle.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\brian\OneDrive - Atlantic TU\Year 2\Wordle\Wordle\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\wordle.scale-400.png">
+      <PackagePath>wordle.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\brian\OneDrive - Atlantic TU\Year 2\Wordle\Wordle\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\wordle_background.scale-100.png">
+      <PackagePath>wordle_background.scale-100.png</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

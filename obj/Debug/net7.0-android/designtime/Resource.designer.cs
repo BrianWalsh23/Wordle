@@ -14988,6 +14988,9 @@ namespace Wordle
 			// aapt resource value: 0x7F0700D6
 			public const int tooltip_frame_light = 2131165398;
 			
+			// aapt resource value: 0x7F0700D7
+			public const int wordle = 2131165399;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

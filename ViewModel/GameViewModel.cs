@@ -1,7 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Microsoft.Maui;
-using System.Collections.Generic;
+using System.Diagnostics;
 using Wordle.Model;
 
 namespace Wordle.ViewModel
@@ -71,29 +70,56 @@ namespace Wordle.ViewModel
             if (columnIndex != 5)
                 return;
 
-            var correct = Rows[rowIndex].Validate(Word);
+            // Join the letters to form the entered word
+            var enteredWord = new string(Rows[rowIndex].Letters.Select(l => char.ToLowerInvariant(l.Input)).ToArray()).Trim();
 
-            if (correct)
+            // Debug information
+            Debug.WriteLine($"Entered Word: {enteredWord}, Expected Word: {new string(Word)}");
+
+            // Check if the entered word exists in the list
+            if (list.WordExists(enteredWord))
             {
-                App.Current.MainPage.DisplayAlert("You Win!", "Congratulations!", "OK");
-                return;
-            }
-            if (rowIndex == 5)
-            {
-                App.Current.MainPage.DisplayAlert("Game Over!", "You are out of turns!", "OK");
-            }
+                var answer = Rows[rowIndex].Validate(Word);
 
-            if (columnIndex != 5)
-                App.Current.MainPage.DisplayAlert("Please enter five letters", "Keep going!", "OK");
 
+                var expectedWord = new string(Word).ToLowerInvariant();
+
+
+                if (answer)
+                {
+                    HandleGameEnd("Congratulations! You Win!", "Click okay to play again!");
+                    return;
+                }
+
+                if (rowIndex == 5)
+                {
+                    HandleGameEnd("Game Over!", "Out of Turns. Click okay to try again!");
+                }
+                else
+                {
+                    rowIndex++;
+                    columnIndex = 0;
+                }
+            }
             else
             {
-                rowIndex++;
-                columnIndex = 0;
+                // Display an alert if the entered word is not in the list
+                App.Current.MainPage.DisplayAlert("Invalid Word", "The entered word is not in the list.", "OK");
+                ClearCurrentLine();
+            }
+        }
+
+        private void ClearCurrentLine()
+        {
+            // Clear the current line by setting the Input of each letter to ' '
+            foreach (var letter in Rows[rowIndex].Letters)
+            {
+                letter.Input = ' ';
             }
 
+            // Optionally, reset the columnsIndex to 0 if needed
+            columnIndex = 0;
         }
-    
         [RelayCommand]
         public void EnterLetter(char letter)
         {
@@ -120,6 +146,36 @@ namespace Wordle.ViewModel
             Rows[rowIndex].Letters[columnIndex].Input = letter;
             columnIndex++;
 
+        }
+
+        private void ResetGame()
+        {
+            rowIndex = 0;
+            columnIndex = 0;
+            newWord = true;
+
+            // Reset the Letters in each row
+            foreach (var row in Rows)
+            {
+                for (int i = 0; i < row.Letters.Length; i++)
+                {
+                    row.Letters[i].Input = ' ';
+                    row.Letters[i].Color = Colors.White; // Set to the default color (you may have a specific color for default state)
+                    row.Letters[i].IsCorrect = false;
+                }
+            }
+
+            GenerateWord();
+
+            // Notify UI that properties have changed
+            OnPropertyChanged(nameof(Rows));
+            OnPropertyChanged(nameof(Word));
+        }
+
+        private void HandleGameEnd(string title, string message)
+        {
+            App.Current.MainPage.DisplayAlert(title, message, "OK");
+            ResetGame();
         }
 
     }

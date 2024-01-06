@@ -1,6 +1,7 @@
 ﻿namespace Wordle
 {
 
+
     public class ListWords
     {
         List<string> words = new List<string>();
@@ -45,6 +46,12 @@
             Random random = new Random();
             int which = random.Next(words.Count);
             return words[which];
+        }
+
+        public bool WordExists(string wordToCheck)
+        {
+            // Check if the given word exists in the list
+            return words.Contains(wordToCheck);
         }
     }
 }

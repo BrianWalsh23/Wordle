@@ -4,6 +4,8 @@
              x:Class="Wordle.SettingsPage"
              Title="SettingsPage">
     <VerticalStackLayout>
+
+        
         <Label 
     Text="Settings"
     VerticalOptions="Center" 
@@ -23,6 +25,8 @@
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 Clicked="DarkMode_Clicked"/>
+
+        <Label x:Name="StoredTextLabel" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" TextColor="Black" />
 
 
 

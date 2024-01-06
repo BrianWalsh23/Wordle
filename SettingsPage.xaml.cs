@@ -1,3 +1,5 @@
+using static Wordle.HomePage;
+
 namespace Wordle;
 
 public partial class SettingsPage : ContentPage
@@ -7,6 +9,8 @@ public partial class SettingsPage : ContentPage
     {
 
         InitializeComponent();
+        string storedText = UserData.EnteredText;
+        StoredTextLabel.Text = storedText;
     }
 
     private void LightMode_Clicked(object sender, EventArgs e)
