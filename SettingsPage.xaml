@@ -26,8 +26,8 @@
                 VerticalOptions="Center"
                 Clicked="DarkMode_Clicked"
         />
-        
-        <Label x:Name="StoredTextLabel" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" TextColor="Black" />
 
+        <Label x:Name="StoredTextLabel" TextColor="DarkCyan" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" FontAttributes="Italic,Bold" FontFamily="Fixed Miriam Transparent"/>
+        <Image Source="wordle.png" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="1000"/>
     </VerticalStackLayout>
 </ContentPage>

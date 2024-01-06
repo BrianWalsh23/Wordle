@@ -6,6 +6,7 @@
     {
         List<string> words = new List<string>();
         HttpClient httpClient;
+        private Random random = new Random();
         string savedfilelocation = System.IO.Path.Combine(FileSystem.Current.AppDataDirectory, "RandomWords.txt");
 
         public async Task getWordList()
@@ -38,7 +39,7 @@
             {
                 var responseStream = await httpClient.GetStreamAsync("https://raw.githubusercontent.com/DonH-ITS/jsonfiles/main/words.txt");
                 using var fileStream = new FileStream(savedfilelocation, FileMode.Create);
-                responseStream.CopyToAsync(fileStream);
+                await responseStream.CopyToAsync(fileStream).ConfigureAwait(false);
             }
         }
         public String GenerateRandomWord()

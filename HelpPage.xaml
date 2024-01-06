@@ -2,14 +2,61 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Wordle.HelpPage"
-             Title="HelpPage">
-    <Grid RowDefinitions="*, Auto"
-                  Padding="8, 1, 8, 5">
+             >
+    <ScrollView>
 
-        <Image Source="wordle.png" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="1000"/>
-        <VerticalStackLayout>
+        <StackLayout Padding="20">
+            <Label x:Name="StoredTextLabel" TextColor="DarkCyan" FontSize="24" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" FontAttributes="Italic,Bold" FontFamily="Fixed Miriam Transparent"/>
 
-            
-        </VerticalStackLayout>
-    </Grid>
+            <Label Text="How To Play"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="CenterAndExpand"
+                   Margin="0,20,0,20"/>
+            <Label Text="Welcome to Wordle! Here's some tips to get you started:"
+                   FontSize="18"
+                   HorizontalOptions="CenterAndExpand"
+                   Margin="0,0,0,10"/>
+            <StackLayout>
+                <Label Text="1. The aim of the game is to guess the five letter word."
+                       FontSize="16"
+                       HorizontalOptions="CenterAndExpand"
+                       Margin="0,0,0,5"/>
+                <Label Text="2. You can enter your guess into the five letter field provided."
+                       FontSize="16"
+                       HorizontalOptions="CenterAndExpand"
+                       Margin="0,0,0,5"/>
+                <Label Text="3. The enter button is in the right bottom corner of the keyboard grid."
+                       FontSize="16"
+                       HorizontalOptions="CenterAndExpand"
+                       Margin="0,0,0,5"/>
+                <Label Text="4. The backspace button is in the left bottom corner"
+                  FontSize="16"
+                     HorizontalOptions="CenterAndExpand"
+                      Margin="0,0,0,5"/>
+                <Label Text="5. You have a maximum of six guesses to get the word correct."
+                       FontSize="16"
+                       HorizontalOptions="CenterAndExpand"
+                       Margin="0,0,0,5"/>
+                <Label Text="6. When a letter is in the correct place it will light up green."
+                       FontSize="16"
+                       HorizontalOptions="CenterAndExpand"
+                       Margin="0,0,0,5"/>
+                <Label Text="7. If the letter is in the word but in the wrong place it with will light up yellow otherwise it will light up gray."
+                       FontSize="16"
+                       HorizontalOptions="CenterAndExpand"
+                       Margin="0,0,0,5"/>
+                <Label Text="8. You can visit the New York times website by following the link below."
+                  FontSize="16"
+                     HorizontalOptions="CenterAndExpand"
+                      Margin="0,0,0,5"/>
+            </StackLayout>
+            <Label Text="https://www.nytimes.com/games/wordle/index.html."
+                   FontSize="16"
+                   HorizontalOptions="CenterAndExpand"
+                   Margin="0,20,0,0"/>
+            <Image Source="wordle.png" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="1000"/>
+        </StackLayout>
+
+    </ScrollView>
 </ContentPage>

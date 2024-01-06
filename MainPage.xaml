@@ -15,10 +15,11 @@
     </ContentPage.ToolbarItems>
 
     <Grid RowDefinitions="*, Auto"
-          Padding="8, -45, 8, 50">
+          Padding="8, 1, 8, 5">
 
         <!--Game Field-->
-        <VerticalStackLayout 
+      <ScrollView Grid.Row="0" VerticalOptions="FillAndExpand">
+            <VerticalStackLayout 
                 Spacing="4"
                 BindableLayout.ItemsSource ="{Binding Rows}">
             <BindableLayout.ItemTemplate>
@@ -42,7 +43,7 @@
                 </DataTemplate>
             </BindableLayout.ItemTemplate>
         </VerticalStackLayout>
-
+      </ScrollView>
         <!--Keyboard Layout-->
 
         <!--Keyboard location on grid-->
